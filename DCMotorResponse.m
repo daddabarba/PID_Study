@@ -18,6 +18,7 @@ t = 0:0.0001:0.1;
 %Laplace variable
 s = tf([1 0],[1]);
 
+%%
 %COMPUTING TF
 
 %tf parameters
@@ -39,6 +40,7 @@ G = G_0*(1/s)*tf(nomG,denG);
 
 %COMPUTE SYSTEM RESPONSES
 
+%%
 %IMPULSE RESPONSE
 
 %Compute impulse response
@@ -71,6 +73,7 @@ if(GUI)
     setPlotStyle();
 end
 
+%%
 %STEP RESPONSE
 
 %Compute step response
@@ -93,6 +96,7 @@ if(GUI)
     setPlotStyle();
 end
 
+%%
 %SYSTEM ROOT LOCUS
 
 %Compute poles of L
@@ -129,7 +133,7 @@ if(GUI)
         plot(poles(2), 'square', 'Color', 'r');
     end
 
-    root0 = plot(0,0,'square', 'Color', 'r');
+    root0 = plot(0,0,'square', rere'Color', 'r');
 
     hold off;
 
@@ -178,6 +182,7 @@ end
 %Disp stability condition
 disp("For the system to be stable 0<k_p<" + (2*w_n*z)/G_0 );
 
+%%
 %STABLE SINUSOIDAL RESPONSE
 
 %Set new time interval
@@ -209,7 +214,8 @@ if(GUI)
     setPlotStyle();
 end
 
-%STABLE SINUSOIDAL RESPONSE
+%%
+%UNSTABLE SINUSOIDAL RESPONSE
 
 %Set new time interval
 t_sin = 29:0.0001:30;
@@ -240,8 +246,8 @@ if(GUI)
     setPlotStyle();
 end
 
-
-%PI CONTROLLER FREQUENCY RESPONSE
+%%
+%PI CONTROLLER FREQUENCY and SINUSOIDAL RESPONSE
 
 %Set frequency interval
 w =logspace(-3,3,600);
